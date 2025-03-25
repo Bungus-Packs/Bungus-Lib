@@ -19,7 +19,7 @@ public abstract class NoiseChunkGeneratorMixin_LavaYeeter {
     @Inject(method="createFluidLevelSampler",at=@At("HEAD"), cancellable = true)
     private static void createFluidLevelSampler(ChunkGeneratorSettings settings, CallbackInfoReturnable<AquiferSampler.FluidLevelSampler> cir) {
         for(BungusLibConfig.LavaAquiferData data:BungusLibConfig.lavaAquiferData) {
-            if (Helpers.getServer().getOverworld().getRegistryManager().get(RegistryKeys.CHUNK_GENERATOR_SETTINGS).getKey(settings).get().getValue().getPath().equals(data.generationSettings())){
+            if (Helpers.server.getOverworld().getRegistryManager().get(RegistryKeys.CHUNK_GENERATOR_SETTINGS).getKey(settings).get().getValue().getPath().equals(data.generationSettings())){
                 int level= data.level();
                 int seaLevel= settings.seaLevel();
                 AquiferSampler.FluidLevel fluidLevelLava = new AquiferSampler.FluidLevel(level, Blocks.LAVA.getDefaultState());
