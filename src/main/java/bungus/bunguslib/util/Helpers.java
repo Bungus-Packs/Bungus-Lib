@@ -8,10 +8,8 @@ import net.minecraft.world.World;
 import java.lang.ref.WeakReference;
 
 public class Helpers {
-    public static MinecraftServer getServer(){
-        return new WeakReference<MinecraftServer>(null).get();
-    }
+    public static MinecraftServer server=new WeakReference<MinecraftServer>(null).get();
     public static ServerWorld getWorldFromDim(RegistryKey<World> key){
-        return getServer().getWorld(key);
+        return server.getWorld(key);
     }
 }
