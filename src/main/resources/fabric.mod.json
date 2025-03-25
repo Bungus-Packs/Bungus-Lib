@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "bunguslib",
+  "version": "${version}",
+  "name": "BungusLib",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/eleph/Bungus-Lib"
+  },
+  "license": "MIT",
+  "icon": "assets/bunguslib/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "bungus.bunguslib.client.BungusLibClient"
+    ],
+    "main": [
+      "bungus.bunguslib.BungusLib"
+    ]
+  },
+  "mixins": [
+    "bunguslib.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
